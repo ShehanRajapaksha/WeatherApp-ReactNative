@@ -6,7 +6,7 @@ import moment from "moment";
 
 const ListItem = (props) => {
   const { dt_txt, min, max, condition, tempnow, isMainItem } = props;
-  const { date, item, tempContainer, tempNow, tempMinMax, iconContainer } = styles;
+  const { date, item, tempContainer, tempNow, tempMinMax, iconContainer,tempNowMain,tempMinMaxMain } = styles;
 
   if (isMainItem) {
     return (
@@ -15,10 +15,10 @@ const ListItem = (props) => {
         <Feather name={WeatherType[condition]?.icon} size={80} color={"white"} />
         </View>
         <View style={styles.firstTempContainer}>
-        <Text style={tempNow}>{`${tempnow.toFixed(1)}°`}</Text>
-        <Text style={tempMinMax}>{`${Math.round(min)}° / ${Math.round(max)}°`}</Text>
+        <Text style={tempNowMain}>{`${tempnow.toFixed(1)}°`}</Text>
+        <Text style={tempMinMaxMain}>{`${Math.round(min)}° / ${Math.round(max)}°`}</Text>
       </View>
-        <Text>True</Text>
+
       </View>
     );
   }
@@ -63,6 +63,7 @@ const styles = StyleSheet.create({
     color: "white",
     fontSize: 24,
     fontWeight: "bold",
+    
   },
   tempMinMax: {
     color: "white",
@@ -88,7 +89,19 @@ const styles = StyleSheet.create({
   },
   firstTempContainer:{
     padding:10,
-  }
+  },
+  tempNowMain:{
+    color: "white",
+    fontSize: 38,
+    fontWeight: "bold",
+
+  },
+  tempMinMaxMain:{
+    color: "white",
+    fontSize: 20,
+    paddingLeft:6
+  },
+  
 });
 
 export default ListItem;

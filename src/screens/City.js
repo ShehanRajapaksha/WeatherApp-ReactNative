@@ -4,7 +4,7 @@ import { SafeAreaView,Text,StyleSheet,ImageBackground, StatusBar, View } from "r
 
 import IconText from "../components/IconText"
 import moment from "moment"
-const City = (weatherData)=> {
+const City = ({weatherData})=> {
     const { name,country,population,sunrise,sunset}=weatherData
     const {container,cityName,cityText,countryName,populationText,populationWrapper,riseSetText,riseSetWrapper}=styles
     return(
@@ -40,6 +40,7 @@ const styles = StyleSheet.create({
     },
     cityName:{
         fontSize:40,
+        
         
     },
     countryName:{

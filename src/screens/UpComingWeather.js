@@ -1,5 +1,5 @@
 import React from "react";
-import { SafeAreaView, StyleSheet, FlatList, StatusBar } from "react-native";
+import { SafeAreaView, StyleSheet, FlatList, StatusBar,View } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import ListItem from "../components/ListItem";
 
@@ -38,11 +38,13 @@ const UpComingWeather = ({ weatherData }) => {
       style={styles.linearGradient}
     >
       <SafeAreaView style={styles.container}>
+      <View style={styles.wrapper}>
         <FlatList
           data={weatherData}
           renderItem={renderItem}
           keyExtractor={(item) => item.dt_txt}
         />
+        </View>
       </SafeAreaView>
     </LinearGradient>
   );
@@ -52,12 +54,16 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     marginTop: StatusBar.currentHeight || 0,
+    
   },
   linearGradient: {
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
   },
+  wrapper:{
+    paddingBottom:40
+  }
 });
 
 export default UpComingWeather;
