@@ -52,8 +52,8 @@ const Tabs = ({ weather })=>{
         {()=><UpComingWeather weatherData={weather.list} />}
       </Tab.Screen>
 
-      <Tab.Screen name={'City'} options={{
-        tabBarIcon:({focused}) =>(<Feather name={'home'} size={25} color={focused ? 'tomato':'white'}/>)
+      <Tab.Screen name={'Settings'} options={{
+        tabBarIcon:({focused}) =>(<Feather name={'settings'} size={25} color={focused ? 'tomato':'white'}/>)
       }}        
       >
         {()=><City weatherData={weather.city}/>}
